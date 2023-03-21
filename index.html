@@ -1,0 +1,463 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>UPLOAD GL INTERFACE</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="PT. WBK Developer">
+	<meta name="copyright" content="PT. WBK Developer">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2019-10-28T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/uploadgl.svg);}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-antasena-lbu-bu">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Pendahuluan</a></li>
+				
+			<li><a href="#requirement" title="Requirement">Software & Hardware Minimum Requirement</a></li>
+			<li><a href="#persiapan" title="persiapan">Persiapan</a></li>
+			<li><a href="#setup_iis" title="Setup Web Server IIS">Setup Web Server IIS</a></li>
+			<li><a href="#setup_app_server" title="Setup Aplikasi Upload GL Interface IIS Web Server">Setup Aplikasi UPLOAD GL Interface ke IIS Web Server</a></li>
+			<li><a href="#Setup_Aplikasi_Interface" title="Setup Aplikasi Upload GL Interface">Run Aplikasi UPLOAD GL Interface</a></li>
+			
+			<li><a href="#Koneksi_Mesin_AS400" title="Setting Koneksi Mesin AS400">Setting Koneksi Mesin AS400 WINCORE</a></li>
+
+			<li><a href="#Scheduling" title="Setting Schedule Upload GL">Scheduling Upload GL Ke WINCORE</a></li>
+			<li><a href="#JobProsesManual" title="Manual Job Proses Upload">Manual Job Proses Upload</a></li>
+			
+			<li><a href="#UploadFile" title="Upload File ke server">Upload File</a></li>
+			<li><a href="#FileGagalReport" title="File Gagal">File Gagal Report</a></li>
+			
+			<li><a href="#FileSuksesReport" title="File Sukses">File Sukses Report</a></li>
+			
+			<li><a href="#ClearLog" title="Clear Log Console">Clear Log Console</a></li>
+			<li><a href="#DownloadLog" title="Download Log File">Download Log File</a></li>
+			
+			<li><a href="#PemeliharaanUser" title="Pemeliharaan User">Pemeliharaan User</a></li>
+		
+			
+
+		</ul>
+		<div id="documenter_copyright">&copy; PT. Warna Bintang Kreasi 2019<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>UPLOAD GL INTERFACE INTEGRASI KE WINCORE</h1>
+	<h2>Petunjuk Upload GL Interface </h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 10/05/2020</li>
+	<li>latest update: 08/06/2020</li>
+	<li>Version 5.0</li>
+	<li>by: PT. Warna Bintang Kreasi</li>
+	<li><a href=""></a></li>
+	</ul>
+	<p>Aplikasi Interface UPLOAD GL di tujukan sebagai sarana bantu untuk mengupload data GL Bank Artos secara langsung ke Sistem Wincore</p>
+	</section>
+	
+	<section id="requirement">
+	<div class="page-header"><h3>Software Minimum Requirement</h3><hr class="notop"></div>
+<ol style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		IIS 7+ </li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Framework ASP.NET 4.5.1</li>
+	
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Windows Server 2012 Minimum</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Browser (Chrome, Firefox, IE, Safari)</li>
+</ol>
+<div class="page-header"><h3>Hardware Minimum Requirement</h3><hr class="notop"></div>
+<ol style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+		Aplication server 1 Units 
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Processor Intel Core i7 or Higher</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Memori Ram 16 Gb or higher)</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		HardDisk 500 GB or higher</li>
+	
+		Client Workstation
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Processor Intel Core i5</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Memori Ram 4 Gb or higher</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		HardDisk 300 GB or higher</li>
+</ol>
+
+</section>
+<section id="persiapan">
+	<div class="page-header"><h3>Persiapan </h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	Sebelum Instalasi setup aplikasi interface Upload GL, ada beberpa yang harus disetup :</div>
+<ol style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Setup Web server minimal IIS 7</li>
+	
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Jika semua sudah di setup di PC server, bisa lanjut ke instalasi setup berikutnya</li>
+</ol>
+</section>
+<section id="setup_iis">
+	<div class="page-header"><h3>Setup Web Server IIS</h3><hr class="notop"></div>
+<ol style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<li  style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Run box di window 10 dan ketik appwiz.cpl dan itu akan membuka menu Control Panel ;&nbsp;</li>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/appwiz.png" /></p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Masuk Ke menu control panel dan pilih program and Features</li>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/turnwindowsonoff.png" /></p>	
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik Internet Information Services check box.</li>
+		<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/servicecheckbox.png" /></p>	
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Expand Internet Information Services check box dan setup seperti gambar dibawah.</li>
+		<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis12.png" /></p>	
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik ok dan akan muncul dialog seperti dibawah ini.</li>
+		<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/dialog.png" /></p>	
+</ol>
+<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	Ketika setup IIS sudah selesai, buka browser kemudian ketik localhost maka akan muncul seperti gambar dibawah ini.</li>
+<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/fireup.png" /></p>
+<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	&nbsp;</p>
+
+</section>
+
+<section id="setup_app_server">
+	<div class="page-header"><h3>Setup Aplikasi UPLOAD GL Interface ke IIS Web Server</h3><hr class="notop"></div>
+<ol style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Download dari <a href="https://drive.google.com/drive/folders/1WLUwu9-RIrUp0__5HOJuYf6XO1tvNCqz?usp=sharing">Google Drive </a> dan Extract file zip -> WBK_Web_UploadGL_V5.zip (Password zip file: wbk2020)</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Buat Direktory folder dengan nama "uploadgl" di folder C:\Inetpub\wwwroot\</li>
+		<p>
+		</p>
+		<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/wwww.png" style="width: 735px; height: 236px;"/></p>	
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Hasil extract file dicopy paste ke folder Inetpub/wwwroot/uploadgl</li>
+	<p>
+		</p>	
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/wwwroot.png" style="width: 1000px; height: 600px;"/></p>	
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Buka Control panel dan pilih Internet Information Services (IIS) Manager</li>
+	<p>
+		</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis2.png" style="width: 1000px; height: 600px;"/></p>	
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik Default Website dan klik mouse kanan di Uploadgl seperti gambar berikut:</li>
+	<p>
+		</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis3.png" style="width: 1000px; height: 600px;" /></p>	
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Pilih Convert to Application seperti gambar berikut:</li>
+	<p>
+		</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis4.png" style="width: 1000px; height: 600px;" /></p>	
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik OK di menu pop up application pool seperti gambar berikut:</li>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis6.png" style="width: 1000px; height: 600px;" /></p>
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Ubah Folder Akses permission satu per satu untuk folder FileGagal, FileSukses dan FileUpload ke full akses </li>
+	<p>
+		</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis10.png" style="width: 1000px; height: 600px;" /></p>
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Contoh untuk Setting folder akses permission untuk folder FileGagal, klik mouse kanan pilih edit permission seperti gambar berikut:</li>
+	<p>
+		</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis7.png" style="width: 1000px; height: 600px;" /></p>
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		di menu properties pilih tab Security, kemudian Edit, pilh IIS_IUSRS, di list permission di kolom Allow klik Full Control, kemudian Klik OK, seperti gambar berikut:</li>
+	<p>
+		</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis9.png" style="width: 1000px; height: 600px;" /></p>
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Lakukan untuk Folder lainnya untuk Akses file permission seperti langkah 9 dan 10</li>
+	<p>
+		</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Restart Website, klik mouse kanan di Default website, kemudian pilih manage website dan pilih Restart, seperti gambar berikut:</li>
+	<p>
+		</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/iis11.png" style="width: 1000px; height: 600px;" /></p>
+	
+	
+</ol>
+</section>
+<section id="Setup_Aplikasi_Interface">
+	<div class="page-header"><h3>Run Aplikasi Upload GL Interface</h3><hr class="notop"></div>
+	
+<ol style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Buka Browser favorit anda dan ketik localhost atau alamat web server yang sebelumnya sudah disetup aplikasi interfacenya, apabila berhasil akan muncul page login, untuk user dan password default : user: admin, password : admin</li>
+		<p>
+	</P>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/login.png"  style="width: 1000px; height: 600px;" /></p>	
+	<p>
+	</p>
+	
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		ketik username : admin dan Password : admin, klik Sign in , apabila berhasil login  akan muncul page Upload GL Console Dashboard</li>
+		<p>
+	</P>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/dasd.png"  style="width: 1000px; height: 600px;" /></p>	
+	<p>
+	</p>
+	
+	</ol>
+</section>
+
+
+<section id="Koneksi_Mesin_AS400">
+	<div class="page-header"><h3>Setting Koneksi Mesin AS400</h3><hr class="notop"></div>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Pertama kali yang harus disetup adalah parameter koneksi ke mesin AS400, Buka menu Setting, isi data source mesin wincore, user name, password dan LIbrary yang ada di mesin WINCORE, seperti contoh gambar berikut: </li>
+	<p>
+	</P>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/setting2.png" style="width: 1000px; height: 600px;" /></p>		
+	<p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Kemudian klik Save Setting
+		<p>
+	</P>
+		<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/setting3.png" style="width: 1000px; height: 600px;" /></p>		
+	<p>
+	</P>
+	
+</section>
+
+
+	<section id="Scheduling">
+	<div class="page-header"><h3>Setting Schedule Upload GL Otomatis </h3><hr class="notop"></div>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Untuk Proses otomatis Upload GL ke WIncore bisa menggunakan Scheduler dan untuk setting jadwal tersebut menggunakan Cron expression seperti contoh gambar dibawah ini </li>
+	<p>
+	</P>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/schedule.png" style="width: 1000px; height: 600px;" /></p>		
+	<p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Untuk mengetahui cara setting cron expression bisa kunjungi website https://crontab.guru/ seperti gambar dibawah ini </li>
+	<p>
+	</P>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/cron.png" style="width: 1000px; height: 600px;" /></p>		
+	
+
+</section>
+
+<section id="JobProsesManual">
+	<div class="page-header"><h3>Manual Job Proses Upload</h3><hr class="notop"></div>
+
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Menu Manual Job proses upload di tujukan untuk memproses upload data GL yang tidak mengikuti schedule atau  apabila ada sesuatu proses upload data yang gagal dan bisa dilakukan proses kembali secara manual.  </li>
+	<p>
+	</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/dasd2.png" style="width: 1000px; height: 500px;" /></p>		
+	<p>
+	</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik OK untuk lanjut proses upload  </li>
+	<p>
+	</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/prosesjobmanual.png" style="width: 1000px; height: 500px;" /></p>		
+	
+	
+</section>
+
+
+<section id="UploadFile">
+	<div class="page-header"><h3>Upload File Ke Server</h3><hr class="notop"></div>
+<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		File yang akan diupload harus ber extension .csv dan .done</li>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/upload.png" style="width: 1000px; height: 600px;" /></p>		
+	
+<p>	&nbsp;</p>
+</section>
+<section id="FileGagalReport">
+	<div class="page-header"><h3>File Gagal Report</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	Klik Menu File Gagal Report untuk melihat hasil proses upload data GL dari Wincore, file hasil proses yang di generate by system seperti gambar berikut:</div>
+<ol style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/gagal.png" style="width: 1000px; height: 600px;" /></p>
+	
+</ol>
+
+<p>	&nbsp;</p>
+</section>
+	<section id="FileSuksesReport">
+	<div class="page-header"><h3>File Sukses Report</h3><hr class="notop"></div>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik Menu File Sukses Report untuk melihat hasil proses upload data GL dari Wincore, file hasil proses yang di generate by system seperti gambar berikut: </li>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/sukses.png" style="width: 1000px; height: 600px;" /></p>		
+	<p>
+	
+
+</section>
+
+	
+<section id="ClearLog">
+	<div class="page-header"><h3>Clear Log Console</h3><hr class="notop"></div>
+
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Untuk mengclear Log Console bisa klik menu clear log  </li>
+	<p>
+	</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/dasd.png" style="width: 1000px; height: 500px;" /></p>		
+	
+	
+</section>
+
+<section id="DownloadLog">
+	<div class="page-header"><h3>Download Log File</h3><hr class="notop"></div>
+
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Untuk Download log ke file ke text bisa klik menu Download Log File  </li>
+	<p>
+	</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/dasdl.png" style="width: 1000px; height: 500px;" /></p>		
+	<p>
+	</p>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik OK to save file  </li>
+	<p>
+	</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/logfile.png" style="width: 1000px; height: 500px;" /></p>		
+	
+	
+</section>
+
+<section id="PemeliharaanUser">
+	<div class="page-header"><h3>Pemeliharaan User</h3><hr class="notop"></div>
+
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+		Klik menu user untuk membuat, mengedit dan menghapus user  </li>
+	<p>
+	</p>
+	<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/user.png" style="width: 1000px; height: 500px;" /></p>		
+	
+	
+</section>
+
+
+
+
+	</div>
+</body>
+</html>
